@@ -10,6 +10,8 @@ using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.EventBus.RabbitMq;
 using Volo.Abp.Guids;
+using Volo.Abp.Http.Client.IdentityModel;
+using Volo.Abp.Identity;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
@@ -31,7 +33,9 @@ namespace BloggingService.Host
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
         typeof(BloggingHttpApiModule),
         typeof(BloggingMongoDbModule),
-        typeof(BloggingApplicationModule)
+        typeof(BloggingApplicationModule),
+        typeof(AbpHttpClientIdentityModelModule),
+        typeof(AbpIdentityHttpApiClientModule)
         )]
     public class BloggingServiceHostModule : AbpModule
     {
